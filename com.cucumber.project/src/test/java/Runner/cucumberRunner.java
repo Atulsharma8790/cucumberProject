@@ -3,7 +3,8 @@ package Runner;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-@CucumberOptions(features="src/test/resources/")
+@CucumberOptions(format={"pretty", "json:target/cucumber.json"},
+features={"src/test/java/"})
 public class cucumberRunner extends AbstractTestNGCucumberTests{
 
 }

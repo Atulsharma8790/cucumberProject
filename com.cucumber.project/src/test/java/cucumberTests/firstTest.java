@@ -20,21 +20,26 @@ public class firstTest {
 
 	@Given("^This is my first dummy step$")
 	public void this_is_my_first()  {
-	  System.out.println("1st dummy");
+		System.out.println("1st dummy");
+
 	}
 
 	@When("^This is my second dummy step$")
-	public void this_is_my_second(){	    
-		
+	public void this_is_my_second() {	    
+
 		System.out.println("Second Step");
-	
+
+
 	}
 
 	@Then("This is my third dummy steps")
-	public void this_is_my_third(DataTable stepNumber) {
-		
+	public void this_is_my_third(DataTable stepNumber){
+
 		List<Map<String, String>> data = stepNumber.asMaps(String.class, String.class);
-	System.out.println("third step: "+data.get(0).get("stepNumber"));
+		for(int i=0;i<data.size();i++)
+			System.out.println("third step: "+data.get(i).get("stepNumber"));
+
+
 	}
 
 
