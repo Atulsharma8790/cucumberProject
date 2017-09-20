@@ -21,6 +21,7 @@ public class firstTest {
 	@Given("^This is my first dummy step$")
 	public void this_is_my_first()  {
 		System.out.println("1st dummy");
+
 	}
 
 	@When("^This is my second dummy step$")
