@@ -5,18 +5,41 @@ import java.util.Map;
 
 import org.testng.annotations.BeforeTest;
 
+import cucumber.api.java.*;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class firstTest {
+	
+	
+	
 
-	@BeforeTest
+	@Before("@dummy")
 	public void init()
 	{
-		System.out.println("Before Test");
+		System.out.println("Before Dummy Test");
 	}
+	
+	@After("@dummy")
+	public void tear(){
+		System.out.println("After Dummy Test");
+		
+	}
+	
+	@Before("@aboutMe")
+	public void initMe()
+	{
+		System.out.println("Before aboutMe Test");
+	}
+	
+	@After("@aboutMe")
+	public void tearMe(){
+		System.out.println("After aboutMeTest");
+		
+	}
+	
 
 	@Given("^This is my first dummy step$")
 	public void this_is_my_first()  {
@@ -41,19 +64,19 @@ public class firstTest {
 
 
 	@Given("^My Name is \"([^\"]*)\"$")
-	public void my_Name_is(String arg1) throws Throwable {
-		System.out.println("My Name Is: " + arg1);
+	public void my_Name_is(String name) throws Throwable {
+		System.out.println("My Name Is: " + name);
 	}
 
 	@When("^I am a \"([^\"]*)\"$")
-	public void i_am_a(String arg1) throws Throwable {
-		System.out.println("I am a: " + arg1);
+	public void i_am_a(String profile) throws Throwable {
+		System.out.println("I am a: " + profile);
 
 	}
 
 	@When("^I am \"([^\"]*)\"$")
-	public void i_am(String arg1) throws Throwable {
-		System.out.println("I am : " + arg1);
+	public void i_am(String profession) throws Throwable {
+		System.out.println("I am : " + profession);
 
 	}
 
